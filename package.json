@@ -4,12 +4,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "db:seed": "node scripts/seed-shops.js"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.57.2",
     "next": "13.4.12",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "@supabase/supabase-js": "^2.57.2"
+    "react-dom": "18.2.0"
   }
 }
