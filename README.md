@@ -1,86 +1,30 @@
-# 🛠️ Next.js + Supabase Secure Starter
+# Next.js + Supabase Secure Starter
 
-A minimal starter that connects Next.js with Supabase **securely**:
-- ✅ Supabase anon key only on the client
-- ✅ Supabase service role key only on the server (API routes)
-- ✅ Uses Inter font from Google Fonts (no broken Geist import)
-- ✅ Ready for **CodeSandbox → Vercel** deploy flow
+This is a ready-to-use **Next.js 13 + Supabase** starter with:
+- ✅ Secure API routes (no Supabase service keys exposed on client)
+- ✅ Preconfigured Inter font (no `Geist` bug)
+- ✅ Auto-install & auto-run in CodeSandbox (`.codesandbox/tasks.json`)
+- ✅ Ready for one-click deployment to Vercel
+
+---
 
 ## 🚀 Quick Start
 
-### 1. Clone or Fork
+### 1. Import into CodeSandbox
+- Go to [CodeSandbox Import](https://codesandbox.io/s/)  
+- Paste your repo URL:  
+ 
+## 🔑 Supabase Keys Setup
+
+To run this project, you’ll need to configure your Supabase keys in a `.env.local` file.
+
+### 1. Get Your Project URL
+1. Go to [Supabase Dashboard](https://supabase.com/dashboard/project).
+2. Select your project.
+3. Navigate to **⚙️ Settings → API**.
+4. Copy the **Project URL** (it looks like `https://your-ref.supabase.co`).
+
+Set this as:
 ```bash
-git clone https://github.com/<YOUR_GITHUB_USERNAME>/<REPO_NAME>.git
-cd <REPO_NAME>
-```
+NEXT_PUBLIC_SUPABASE_URL=https://<your-ref>.supabase.co
 
-### 2. Install dependencies
-```bash
-npm install
-```
-
-### 3. Environment Variables
-Create a `.env.local` file in the project root:
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key-here
-```
-
-> ⚠️ **Important:**  
-> - Only the `NEXT_PUBLIC_...` keys are exposed to the browser.  
-> - The `SUPABASE_SERVICE_ROLE_KEY` is **server-side only** — don’t expose it on the client.
-
----
-
-## 🧑‍💻 Development
-
-Start the dev server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000)
-
----
-
-## 💻 CodeSandbox Setup
-
-1. Go to [CodeSandbox → Import from GitHub](https://codesandbox.io/s/).  
-2. Paste your repo URL.  
-3. Add your `.env.local` values in **Sandbox Secrets**.  
-4. Click **Deploy to Vercel** (from Sandbox).
-
----
-
-## ☁️ Vercel Deployment
-
-1. Go to [Vercel](https://vercel.com).  
-2. Import your GitHub repo.  
-3. Add the same environment variables under:  
-   `Project Settings → Environment Variables`.  
-4. Deploy 🚀  
-
----
-
-## 📂 Project Structure
-
-```
-pages/
- ├─ index.js          // UI with "Run import_shops()" button
- └─ api/import-shops.js // API route that calls Supabase function
-.env.local.example     // example env vars
-next.config.js
-package.json
-README.md
-```
-
----
-
-## 📝 Notes
-
-- This template is intentionally minimal.  
-- Extend with: CSV upload → Supabase → role-based dashboards → sales seeding.  
-- All sensitive keys stay on the server only.  
